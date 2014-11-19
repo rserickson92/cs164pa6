@@ -77,11 +77,11 @@ class snake
     #display the game over message
     document.getElementById('gameover').style.visibility='visible'
 
-  
+  # update the snake's body, empty cells and the board
   update: (head)->
     last = @snake_list[@snake_list.length-1]
 
-	# add the new head to the front of the snake_list and take off the tail
+    # add the new head to the front of the snake_list and take off the tail
     for i in [0..@snake_list.length-1]
       tmp = @snake_list[i]
       @snake_list[i] = head
@@ -91,7 +91,7 @@ class snake
        #add the tail and add it to empty list 
        @empty_list.push({'x':last.x, 'y':last.y})
     else
-	   # when eating a pellet, increment score, add tail and generate next pellet
+       # when eating a pellet, increment score, add tail and generate next pellet
        @score += 100
        @snake_list.push({'x':last.x, 'y':last.y})
        @next_pellet()
@@ -155,25 +155,25 @@ class snake
       if @is_gameover is 1
         @reset(@init_x, @init_y, @speed)
     if keyCode is 37
-	  if @snake_list.length > 1 && @direction == 2
-	    @direction = 2
-	  else
-		@direction = 1
+      if @snake_list.length > 1 && @direction == 2
+        @direction = 2
+      else
+        @direction = 1
     else if keyCode is 39
-	  if @snake_list.length > 1 && @direction == 1
-	    @direction = 1
-	  else
-		@direction = 2
+      if @snake_list.length > 1 && @direction == 1
+        @direction = 1
+      else
+        @direction = 2
     else if keyCode is 38
-	  if @snake_list.length > 1 && @direction == 4
-	    @direction = 4
-	  else
-		@direction = 3
+      if @snake_list.length > 1 && @direction == 4
+        @direction = 4
+      else
+        @direction = 3
     else if keyCode is 40
-	  if @snake_list.length > 1 && @direction == 3
-	    @direction = 3
-	  else
-		@direction = 4
+      if @snake_list.length > 1 && @direction == 3
+        @direction = 3
+      else
+        @direction = 4
 
 # start off the game and listen for key presses
 game = new snake 10,10,10
