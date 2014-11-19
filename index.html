@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Snake</title>
+    <style>
+    table
+        {
+        border-collapse:collapse;
+        }
+    
+    td
+        {
+            border:1px solid black;
+            height:30px;
+            width:30px;
+        }
+    td.empty
+        {
+        background-color:white;
+        }
+    td.snake_body
+        {
+        background-color:black;
+        }
+    td.snake_head
+        {
+        background-color:gray;
+        }
+    td.pellet
+    {
+        background-color:yellow;
+    }
+    #gameover{
+        visibility:hidden;
+        position:absolute;
+        top:250px;
+        left:100px;
+        font-weight:bold;
+        font-size:30pt;
+        text-align:center;
+    }
+    #score{
+        font-weight:bold;
+        font-size:30pt;
+    }
+    </style>
+</head>
+
+<body>
+    
+<div id="board"></div>
+<div id="gameover">Game Over<br>Press 'Enter' to restart game</div>
+<div id="score">Score: <span id="score_holder">0</span></div>
+<script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="lib/snake.js"></script>
+
+</body>
+</html>
