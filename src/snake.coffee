@@ -125,6 +125,9 @@ class snake
     @snake_list = []
     @empty_list = []
 
+    #initialize the score
+    @score = 0
+    
     #initialize the free list and empty_list
     for x in [0..@board_width-1]
       for y in [0..@board_height-1]
